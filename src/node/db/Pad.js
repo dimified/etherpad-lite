@@ -151,6 +151,7 @@ Pad.prototype.getInternalRevisionAText = function getInternalRevisionAText(targe
   var keyRev = this.getKeyRevisionNumber(targetRev);
   var atext;
   var changesets = [];
+  var revauthor;
 
   //find out which changesets are needed
   var neededChangesets = [];
@@ -176,6 +177,17 @@ Pad.prototype.getInternalRevisionAText = function getInternalRevisionAText(targe
             callback();
           });
         },
+
+        function (callback)
+        {
+          db.getSub("pad:"+_this.id+":revs:"+targetRev, ["meta", "author"], function(err, _author)
+          {
+            if(ERR(err, callback)) return;
+            revauthor = _author;
+            callback();
+          });
+        },
+
         //get all needed changesets
         function (callback)
         {
@@ -191,7 +203,16 @@ Pad.prototype.getInternalRevisionAText = function getInternalRevisionAText(targe
         }
       ], callback);
     },
+
     //apply all changesets to the key changeset
+    // function(callback)
+    // {
+    //   // cs = _this.getRevisionChangeset(targetRev, callback);
+    //   // revauthor =  _this.getRevisionChangeset(targetRev, callback);
+    //   revauthor =  _this.getRevisionMeta(keyRev, callback);
+    //   // revauthor = db.getSub("pad:"+_this.id+":revs:"+targetRev, ["changeset"], callback);
+    // },
+
     function(callback)
     {
       var apool = _this.apool();
@@ -206,10 +227,11 @@ Pad.prototype.getInternalRevisionAText = function getInternalRevisionAText(targe
 
       callback(null);
     }
+
   ], function(err)
   {
     if(ERR(err, callback)) return;
-    callback(null, atext);
+    callback(null, atext, revauthor);
   });
 };
 

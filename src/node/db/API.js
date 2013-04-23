@@ -252,14 +252,14 @@ exports.getText = function(padID, rev, callback)
         callback(new customError("rev is higher than the head revision of the pad","apierror"));
         return;
       }
-      
+
       //get the text of this revision
-      pad.getInternalRevisionAText(rev, function(err, atext)
+      pad.getInternalRevisionAText(rev, function(err, atext, revauthor)
       {
         if(ERR(err, callback)) return;
-        
-        data = {text: atext.text};
-        
+
+        data = {text: atext.text, author: revauthor};
+
         callback(null, data);
       })
     }

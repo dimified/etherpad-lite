@@ -1,0 +1,108 @@
+/* Import custom font and make it useable */
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300');
+}
+
+body, textarea {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+#users {
+	width: 249px;
+}
+
+#innerdocbody {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+	padding-right: 10px;
+	font-size: 15px;
+	line-height: 1.3em;
+	margin-right: 10px;
+}
+
+#outerdocbody iframe {
+	left: 0px;
+	top: 0px;
+}
+
+.toolbar {
+	background: none;
+	border-bottom: none;
+}
+
+#mycolorpicker {
+	border: 1px solid #DCDCDC;
+}
+
+#mycolorpickersave,
+#mycolorpickercancel {
+	width: 70px;
+}
+
+#chattext {
+	background-color: #DCDCDC;
+	border: 1px solid #CCCCCC;
+	box-shadow: 0 0 4px #DCDCDC inset;
+	margin-bottom: 20px;
+}
+
+#chatinputbox {
+	padding: none;
+}
+
+#chatinput {
+	padding: 5px 0;
+  text-indent: 5px;
+  margin-bottom: 10px
+}
+
+.popup {
+	border-radius: 6px;
+	margin: 5px auto;
+}
+
+#settings,
+#importexport,
+#embed,
+#users {
+	right: 0px;
+}
+
+#connectivity {
+	position: relative;
+	top: 1px;
+	right: initial;
+	display: none;
+	z-index: 500;
+	border-radius: 6px;
+}
+
+.stickyChat {
+  background-color: none;
+  width: 255px !important;
+  border-left: none !important;
+  background: none !important;
+}
+
+#comments {
+  float: right;
+  padding: 4px;
+  font-size: 18px;
+  width: 200px;
+  color: #222222;
+}
+
+.icon-comments-alt, .comments-title  {
+  display: inline-block;
+}
+
+.icon-user {
+  font-size: 15px;
+  float: left;
+  color: #666;
+  margin: 1px 4px 0px 2px;
+}

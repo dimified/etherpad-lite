@@ -43,6 +43,10 @@ body, textarea {
 	width: 70px;
 }
 
+#chatbox {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 #chattext {
 	background-color: #DCDCDC;
 	border: 1px solid #CCCCCC;

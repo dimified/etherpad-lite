@@ -39,6 +39,7 @@
 
         <% e.begin_block("styles"); %>
         <link href="../static/css/pad.css" rel="stylesheet">
+        <link rel="stylesheet" href="../static/font-awesome/css/font-awesome.min.css">
         <link href="../static/custom/pad.css" rel="stylesheet">
         <style title="dynamicsyntax"></style>
         <% e.end_block(); %>
@@ -56,7 +57,7 @@
             </div>
             <ul class="menu_left">
                 <% e.begin_block("editbarMenuLeft"); %>
-                <li class="acl-write" id="bold" data-key="bold">
+            <!--<li class="acl-write" id="bold" data-key="bold">
                     <a class="grouped-left" data-l10n-id="pad.toolbar.bold.title">
                       <span class="buttonicon buttonicon-bold"></span>
                     </a>
@@ -97,7 +98,7 @@
                       <span class="buttonicon buttonicon-outdent"></span>
                     </a>
                 </li>
-                <li class="acl-write separator"></li>
+                <li class="acl-write separator"></li>-->
                 <li class="acl-write" id="undo" data-key="undo">
                     <a class="grouped-left" data-l10n-id="pad.toolbar.undo.title">
                       <span class="buttonicon buttonicon-undo"></span>
@@ -108,17 +109,17 @@
                       <span class="buttonicon buttonicon-redo"></span>
                     </a>
                 </li>
-                <li class="acl-write separator"></li>
-                <li class="acl-write" id="clearAuthorship" data-key="clearauthorship">
+                <!-- <li class="acl-write separator"></li> -->
+                <!-- <li class="acl-write" id="clearAuthorship" data-key="clearauthorship">
                     <a data-l10n-id="pad.toolbar.clearAuthorship.title">
                       <span class="buttonicon buttonicon-clearauthorship"></span>
                     </a>
-                </li>
+                </li> -->
                 <% e.end_block(); %>
             </ul>
             <ul class="menu_right">
                 <% e.begin_block("editbarMenuRight"); %>
-                <li data-key="import_export">
+                <!--<li data-key="import_export">
                     <a class="grouped-left" id="importexportlink" data-l10n-id="pad.toolbar.import_export.title">
                         <span class="buttonicon buttonicon-import_export"></span>
                     </a>
@@ -144,15 +145,20 @@
                         <span class="grouped-right buttonicon buttonicon-embed"></span>
                     </a>
                 </li>
-                <li class="separator"></li>
+                <li class="separator"></li>-->
                 <li id="usericon" data-key="showusers">
                     <a data-l10n-id="pad.toolbar.showusers.title">
-                        <span class="buttonicon buttonicon-showusers"></span>
+                        <!--<span class="buttonicon buttonicon-showusers"></span>-->
+                        <div class="icon-user"></div>
                         <span id="online_count">1</span>
                     </a>
                 </li>
                 <% e.end_block(); %>
             </ul>
+            <div id="comments">
+                <div class="icon-comments-alt"></div>
+                <div class="comments-title">Kommentare</div>
+            </div>
         </div>
 
         <div id="users">
@@ -388,7 +394,8 @@
             </div>
             <div id="chatinputbox">
                 <form>
-                    <input id="chatinput" type="text" maxlength="999">
+                    <!--<input id="chatinput" type="text" maxlength="999">-->
+                    <input id="chatinput" type="text" maxlength="999" placeholder="Teile deine Meinung mit anderen...">
                 </form>
             </div>
         </div>

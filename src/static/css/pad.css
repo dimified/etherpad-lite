@@ -1,3 +1,11 @@
+/* Import custom font and make it useable */
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300');
+}
+
 *,
 html,
 body,
